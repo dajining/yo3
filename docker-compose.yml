@@ -1,8 +1,9 @@
 version: '2'
 
 services:
-  app:
+  app: &app
     build: .
+    command: bin/rails server -p 3000 -b 0.0.0.0
     depends_on:
       - db
     ports:
@@ -12,6 +13,11 @@ services:
     volumes:
       - .:/app
       - bundle-data:/usr/local/bundle
+
+  spring:
+    <<: *app
+    command: bin/spring server
+    ports: []
 
   db:
     build: db

@@ -28,6 +28,8 @@ gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 # Use webpack to manage app-like JavaScript modules in Rails (https://github.com/rails/webpacker)
 gem 'webpacker'
+# Minimal embedded v8 for Ruby (https://github.com/discourse/mini_racer)
+gem 'mini_racer', platforms: :ruby
 
 # Use Hashids in your Rails app models. (https://github.com/jcypret/hashid-rails)
 gem 'hashid-rails'
@@ -80,8 +82,8 @@ group :development, :test do
 
   # Strategies for cleaning databases.  Can be used to ensure a clean state for testing. (http://github.com/DatabaseCleaner/database_cleaner)
   gem 'database_cleaner'
-  # factory_girl_rails provides integration between factory_girl and rails 3 or newer (http://github.com/thoughtbot/factory_girl_rails)
-  gem 'factory_girl_rails'
+  # factory_bot_rails provides integration between factory_bot and rails 3 or newer (http://github.com/thoughtbot/factory_bot_rails)
+  gem 'factory_bot_rails'
   # Making tests easy on the fingers and eyes (http://thoughtbot.com/community/)
   gem 'shoulda-matchers'
 end
