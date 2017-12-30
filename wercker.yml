@@ -9,6 +9,11 @@ services:
 build:
   steps:
     - bundle-install
+
+    - script:
+      name: db:migrate
+      code: RAILS_ENV=test bundle exec rails db:migrate
+
     - script:
       name: rspec
-      code: COVERAGE=true bin/rspec --format progress
+      code: COVERAGE=true bundle exec rspec --format progress
