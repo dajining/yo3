@@ -3,12 +3,25 @@ version: '2'
 services:
   app:
     build: .
+    depends_on:
+      - db
+    ports:
+      - '3000:3000'
+    stdin_open: true
+    tty: true
     volumes:
       - .:/app
-      - bundle:/usr/local/bundle
-    tty: true
-    stdin_open: true
+      - bundle-data:/usr/local/bundle
+
+  db:
+    build: db
+    ports:
+      - '3306:3306'
+    volumes:
+      - mysql-data:/var/lib/mysql
 
 volumes:
-  bundle:
+  bundle-data:
+    driver: local
+  mysql-data:
     driver: local
