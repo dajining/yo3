@@ -1,0 +1,14 @@
+box: docker.io/dajining/yo3-app
+
+services:
+  - id: mysql:5.7
+    env:
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_DATABASE: yo3_test
+
+build:
+  steps:
+    - bundle-install
+    - script:
+      name: rspec
+      code: COVERAGE=true bin/rspec --format progress
