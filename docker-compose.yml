@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+    tty: true
+    stdin_open: true
+
+volumes:
+  bundle:
+    driver: local
