@@ -106,13 +106,6 @@ group :development do
   # Add comments to your Gemfile with each dependency's description. (https://github.com/ivantsepp/annotate_gem)
   gem 'annotate_gem'
 
-  # Guard keeps an eye on your file modifications (http://guardgem.org)
-  gem 'guard'
-  # Guard gem for RSpec (https://github.com/guard/guard-rspec)
-  gem 'guard-rspec', require: false
-  # Guard plugin for RuboCop (https://github.com/yujinakayama/guard-rubocop)
-  gem 'guard-rubocop'
-
   # Automatic Ruby code style checking tool. (https://github.com/bbatsov/rubocop)
   gem 'rubocop', require: false
 
